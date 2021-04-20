@@ -5,10 +5,34 @@ import 'package:google_fonts/google_fonts.dart';
 
 class LevelButtonWidget extends StatelessWidget {
   final String label;
-  const LevelButtonWidget({
+  LevelButtonWidget({
     Key? key,
     required this.label,
-  }) : super(key: key);
+  })   : assert(["Easy", "Medium", "Hard", "Extreme"].contains(label)),
+        super(key: key);
+
+  final config = {
+    "Medium": {
+      "color": AppColors.levelButtonMedio,
+      "borderColor": AppColors.levelButtonBorderMedio,
+      "fontColor": AppColors.levelButtonTextMedio,
+    },
+    "Easy": {
+      "color": AppColors.levelButtonFacil,
+      "borderColor": AppColors.levelButtonBorderFacil,
+      "fontColor": AppColors.levelButtonTextFacil,
+    },
+    "Hard": {
+      "color": AppColors.levelButtonDificil,
+      "borderColor": AppColors.levelButtonBorderDificil,
+      "fontColor": AppColors.levelButtonTextDificil,
+    },
+    "Extreme": {
+      "color": AppColors.levelButtonPerito,
+      "borderColor": AppColors.levelButtonBorderPerito,
+      "fontColor": AppColors.levelButtonTextPerito,
+    },
+  };
 
   @override
   Widget build(BuildContext context) {
