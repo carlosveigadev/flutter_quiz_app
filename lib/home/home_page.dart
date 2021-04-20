@@ -14,10 +14,18 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarWidget(),
-      body: LevelButtonWidget(
-        label: 'Easy',
-      ),
-    );
+        appBar: AppBarWidget(),
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              LevelButtonWidget(label: 'Easy'),
+              LevelButtonWidget(label: 'Medium'),
+              LevelButtonWidget(label: 'Hard'),
+              LevelButtonWidget(label: 'Extreme'),
+            ],
+          ),
+        ));
   }
 }
